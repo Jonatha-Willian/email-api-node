@@ -1,12 +1,13 @@
 import { Router } from 'express';
+import nodemailer from 'nodemailer';
 
 import * as ApiController from '../controllers/apiController';
+import * as EmailController from '../controllers/emailController';
 
 const router = Router();
 
-router.post('/register', ApiController.register);
-router.post('/login', ApiController.login);
+router.get('/ping', ApiController.ping);
 
-router.get('/list', ApiController.list);
+router.post('/contato', EmailController.contato);
 
 export default router;
